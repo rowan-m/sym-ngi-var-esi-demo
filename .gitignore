@@ -1,3 +1,9 @@
 .buildpath
 .project
 .settings
+/var/www/Symfony/app/bootstrap*
+/var/www/Symfony/app/cache/*
+/var/www/Symfony/app/config/parameters.ini
+/var/www/Symfony/app/logs/*
+/var/www/Symfony/vendor/
+/var/www/Symfony/web/bundles/
