@@ -1,0 +1,33 @@
+server {
+    # Varnish is listening on port 80
+    listen 8080;
+    server_name sf2-demo.local;
+
+    root /var/www/Symfony/web;
+
+    access_log /var/log/nginx/sf2-demo.local/access.log;
+    error_log  /var/log/nginx/sf2-demo.local/error.log;
+
+    index app_dev.php index.html index.htm;
+
+    try_files $uri $uri/ @rewrite;
+
+    location @rewrite {
+        rewrite ^/(.*)$ /app_dev.php/$1;
+    }
+
+    location ~ \.php {
+        fastcgi_index app_dev.php;
+        fastcgi_pass 127.0.0.1:9000;
+
+        include fastcgi_params;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_param PATH_TRANSLATED $document_root$fastcgi_path_info;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}

@@ -23,21 +23,24 @@ Install:
 * PHP-FPM - http://php-fpm.org/
 
 ```
-sudo apt-get install varnish nginx php5-fpm php5-cli php-apc php5-xdebug
-php5-sqlite
+sudo apt-get install varnish nginx php5-fpm php5-cli php-apc php5-xdebug php5-sqlite
+```
+
+*Note:* This current Ubuntu bug (https://bugs.launchpad.net/ubuntu/+source/php5/+bug/875262) means you will probably want to comment out all the lines in `/etc/php5/conf.d/sqlite.ini`:
+
+```
+; configuration for php SQLite module
+; extension=sqlite.so
 ```
 
 Installing Symfony
 ------------------
 
-Symfony has been extracted into the repo using the 2.0.12 version available here
-- http://symfony.com/download?v=Symfony_Standard_Vendors_2.0.12.tgz
+Symfony has been extracted into the repo using the 2.0.12 version available here - http://symfony.com/download?v=Symfony_Standard_Vendors_2.0.12.tgz
 
-The `.gitignore` file has entries matching the Symfony instructions here -
-http://symfony.com/doc/current/cookbook/workflow/new_project_git.html
+The `.gitignore` file has entries matching the Symfony instructions here - http://symfony.com/doc/current/cookbook/workflow/new_project_git.html
 
-You will need to set permissions in a way inspired by the documentation -
-http://symfony.com/doc/current/book/installation.html#configuration-and-setup
+You will need to set permissions in a way inspired by the documentation - http://symfony.com/doc/current/book/installation.html#configuration-and-setup
 
 ```
 cd var/www/Symfony/
@@ -47,3 +50,19 @@ sudo chown -R :www-data  app/cache/ app/logs/
 sudo chmod -R ug+rwX  app/cache/ app/logs/
 ```
 
+Configuring nginx
+-----------------
+
+Remove the `default` site, create the logging files, and enable the new site.
+
+```
+sudo mkdir /var/log/php5/
+sudo touch /var/log/php5/fpm.log
+sudo chown www-data /var/log/php5/fpm.log
+sudo rm /etc/nginx/sites-enabled/default
+sudo mkdir -p /var/log/nginx/sf2-demo.local
+sudo touch /var/log/nginx/sf2-demo.local/access.log /var/log/nginx/sf2-demo.local/error.log
+sudo ln -s ../sites-available/sf2-demo.local /etc/nginx/sites-enabled/sf2-demo.local
+sudo /etc/init.d/php5-fpm restart
+sudo /etc/init.d/nginx restart
+```
