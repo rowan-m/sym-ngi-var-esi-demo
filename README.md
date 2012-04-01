@@ -36,9 +36,8 @@ Symfony has been extracted into the repo using the 2.0.12 version available here
 The `.gitignore` file has entries matching the Symfony instructions here -
 http://symfony.com/doc/current/cookbook/workflow/new_project_git.html
 
-You will need to set permissions as per the documentat -
+You will need to set permissions in a way inspired by the documentation -
 http://symfony.com/doc/current/book/installation.html#configuration-and-setup
-
 
 ```
 cd var/www/Symfony/
@@ -47,3 +46,4 @@ rm -rf app/logs/*
 sudo chown -R :www-data  app/cache/ app/logs/
 sudo chmod -R ug+rwX  app/cache/ app/logs/
 ```
+
