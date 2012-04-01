@@ -26,7 +26,9 @@ Install:
 sudo apt-get install varnish nginx php5-fpm php5-cli php-apc php5-xdebug php5-sqlite
 ```
 
-*Note:* This current Ubuntu bug (https://bugs.launchpad.net/ubuntu/+source/php5/+bug/875262) means you will probably want to comment out all the lines in `/etc/php5/conf.d/sqlite.ini`:
+*Note:* This current Ubuntu bug
+(https://bugs.launchpad.net/ubuntu/+source/php5/+bug/875262) means you will
+probably want to comment out all the lines in `/etc/php5/conf.d/sqlite.ini`:
 
 ```
 ; configuration for php SQLite module
@@ -36,11 +38,14 @@ sudo apt-get install varnish nginx php5-fpm php5-cli php-apc php5-xdebug php5-sq
 Installing Symfony
 ------------------
 
-Symfony has been extracted into the repo using the 2.0.12 version available here: http://symfony.com/download?v=Symfony_Standard_Vendors_2.0.12.tgz
+Symfony has been extracted into the repo using the 2.0.12 version available
+here: http://symfony.com/download?v=Symfony_Standard_Vendors_2.0.12.tgz
 
-The `.gitignore` file has entries matching the Symfony instructions here: http://symfony.com/doc/current/cookbook/workflow/new_project_git.html
+The `.gitignore` file has entries matching the Symfony instructions here:
+http://symfony.com/doc/current/cookbook/workflow/new_project_git.html
 
-You will need to set permissions in a way inspired by the documentation: http://symfony.com/doc/current/book/installation.html#configuration-and-setup
+You will need to set permissions in a way inspired by the documentation:
+http://symfony.com/doc/current/book/installation.html#configuration-and-setup
 
 ```
 cd var/www/Symfony/
@@ -68,3 +73,10 @@ sudo /etc/init.d/nginx restart
 ```
 
 You should now be able to access the Welcome page by visiting: http://sf2-demo.local:8080/
+
+Configuring Varnish
+-------------------
+
+Assuming you're using the provided `etc/default/varnish` file, then Varnish is
+already listening on port 80. You should be able to see the same Welcome page
+on: http://sf-2demo.local
