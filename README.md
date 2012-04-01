@@ -18,9 +18,9 @@ Installing Packages
 -------------------
 
 Install:
-* Varnish - https://www.varnish-cache.org/
-* nginx - http://nginx.org/
-* PHP-FPM - http://php-fpm.org/
+* Varnish: https://www.varnish-cache.org/
+* nginx: http://nginx.org/
+* PHP-FPM: http://php-fpm.org/
 
 ```
 sudo apt-get install varnish nginx php5-fpm php5-cli php-apc php5-xdebug php5-sqlite
@@ -36,11 +36,11 @@ sudo apt-get install varnish nginx php5-fpm php5-cli php-apc php5-xdebug php5-sq
 Installing Symfony
 ------------------
 
-Symfony has been extracted into the repo using the 2.0.12 version available here - http://symfony.com/download?v=Symfony_Standard_Vendors_2.0.12.tgz
+Symfony has been extracted into the repo using the 2.0.12 version available here: http://symfony.com/download?v=Symfony_Standard_Vendors_2.0.12.tgz
 
-The `.gitignore` file has entries matching the Symfony instructions here - http://symfony.com/doc/current/cookbook/workflow/new_project_git.html
+The `.gitignore` file has entries matching the Symfony instructions here: http://symfony.com/doc/current/cookbook/workflow/new_project_git.html
 
-You will need to set permissions in a way inspired by the documentation - http://symfony.com/doc/current/book/installation.html#configuration-and-setup
+You will need to set permissions in a way inspired by the documentation: http://symfony.com/doc/current/book/installation.html#configuration-and-setup
 
 ```
 cd var/www/Symfony/
@@ -66,3 +66,5 @@ sudo ln -s ../sites-available/sf2-demo.local /etc/nginx/sites-enabled/sf2-demo.l
 sudo /etc/init.d/php5-fpm restart
 sudo /etc/init.d/nginx restart
 ```
+
+You should now be able to access the Welcome page by visiting: http://sf2-demo.local:8080/
