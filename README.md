@@ -49,8 +49,8 @@ http://symfony.com/doc/current/book/installation.html#configuration-and-setup
 
 ```
 cd var/www/Symfony/
-rm -rf app/cache/*
-rm -rf app/logs/*
+sudo rm -rf app/cache/*
+sudo rm -rf app/logs/*
 sudo chown -R :www-data  app/cache/ app/logs/
 sudo chmod -R ug+rwX  app/cache/ app/logs/
 ```
