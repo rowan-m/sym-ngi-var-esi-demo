@@ -84,4 +84,14 @@ on: http://sf-2demo.local
 The remaining changes have been made as per:
 http://symfony.com/doc/current/cookbook/cache/varnish.html
 
+Configuring Symfony
+-------------------
+
+The Symfony configuration files have been updated as per:
+http://symfony.com/doc/current/book/http_cache.html#edge-side-includes
+
+You can see the changes in:
+
+* `var/www/Symfony/app/config/config.yml`
+* `var/www/Symfony/app/config/routing.yml`
 
