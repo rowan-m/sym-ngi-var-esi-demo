@@ -1,6 +1,6 @@
 IbuildingsEsiDemoBundle:
     resource: "@IbuildingsEsiDemoBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /esi-demo
 
 # Internal routing configuration to handle ESI
 _internal:
