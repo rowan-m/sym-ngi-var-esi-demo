@@ -99,3 +99,12 @@ You can see the changes in:
 * `var/www/Symfony/app/config/config.yml`
 * `var/www/Symfony/app/config/routing.yml`
 
+The example bundle has been generated using:
+
+```
+cd var/www/Symfony
+php app/console generate:bundle --namespace=Ibuildings/EsiDemoBundle
+--format=yml
+```
+
+

@@ -1,0 +1,7 @@
+parameters:
+#    ibuildings_esi_demo.example.class: Ibuildings\EsiDemoBundle\Example
+
+services:
+#    ibuildings_esi_demo.example:
+#        class: %ibuildings_esi_demo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

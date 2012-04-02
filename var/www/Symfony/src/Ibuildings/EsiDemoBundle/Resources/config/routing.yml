@@ -1,0 +1,3 @@
+IbuildingsEsiDemoBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: IbuildingsEsiDemoBundle:Default:index }
