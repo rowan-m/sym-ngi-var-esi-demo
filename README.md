@@ -80,3 +80,8 @@ Configuring Varnish
 Assuming you're using the provided `etc/default/varnish` file, then Varnish is
 already listening on port 80. You should be able to see the same Welcome page
 on: http://sf-2demo.local
+
+The remaining changes have been made as per:
+http://symfony.com/doc/current/cookbook/cache/varnish.html
+
+
