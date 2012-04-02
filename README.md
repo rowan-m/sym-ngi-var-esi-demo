@@ -55,6 +55,10 @@ sudo chown -R :www-data  app/cache/ app/logs/
 sudo chmod -R ug+rwX  app/cache/ app/logs/
 ```
 
+*Note:* Using the shared storage on VMs does seem to be a bit flaky, especially
+with the cache files. So, try re-running the above or if in doubt, try turning
+it off and turning it back on again.
+
 Configuring nginx
 -----------------
 
