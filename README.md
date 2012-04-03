@@ -110,4 +110,16 @@ php app/console generate:bundle --namespace=Ibuildings/EsiDemoBundle
 --format=yml
 ```
 
+Using ESI
+---------
 
+The use of ESI is enabled through Twig's `render` tag. To demonstrate this, an
+additional action called "`included`" has been added to the default controller along with a matching
+template.
+
+* `var/www/Symfony/src/Ibuildings/EsiDemoBundle/Controller/DefaultController.php`
+* `var/www/Symfony/src/Ibuildings/EsiDemoBundle/Resources/views/Default/index.html.twig`
+* `var/www/Symfony/src/Ibuildings/EsiDemoBundle/Resources/views/Default/included.html.twig`
+
+By setting different values for `s-maxage` in the `cache-control` header we can
+see that each individual section is cached for a different amount of time.

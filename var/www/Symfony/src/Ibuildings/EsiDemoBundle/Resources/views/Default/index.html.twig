@@ -1,1 +1,4 @@
-Hello {{ name }}!
+<h1>Index Action</h1>
+Hello {{ name }}, it's currently {{ "now"|date("r") }}.
+<hr />
+{% render 'IbuildingsEsiDemoBundle:Default:included' with {}, {'standalone': true} %}
