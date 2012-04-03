@@ -99,6 +99,9 @@ You can see the changes in:
 * `var/www/Symfony/app/config/config.yml`
 * `var/www/Symfony/app/config/routing.yml`
 
+Automatically starting the session has also been disabled in `config.yml` to
+prevent sending cookies on all requests.
+
 The example bundle has been generated using:
 
 ```
