@@ -14,6 +14,8 @@ backend default {
 # appended to your code.
 
 sub vcl_recv {
+    set req.backend = default;
+    # Tell Symfony2 that varnish is there, supporting ESI
     set req.http.Surrogate-Capability = "abc=ESI/1.0";
 }
 
@@ -93,13 +95,10 @@ sub vcl_miss {
 # }
 
 sub vcl_fetch {
+    # Enable ESI only if the backend responds with an ESI header
     if (beresp.http.Surrogate-Control ~ "ESI/1.0") {
         unset beresp.http.Surrogate-Control;
-
-        # for Varnish >= 3.0
         set beresp.do_esi = true;
-        # for Varnish < 3.0
-        # esi;
     }
 }
 

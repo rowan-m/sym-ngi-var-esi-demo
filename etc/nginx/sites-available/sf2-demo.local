@@ -9,15 +9,18 @@ server {
     error_log  /var/log/nginx/sf2-demo.local/error.log;
 
     index app_dev.php index.html index.htm;
+    # index app.php index.html index.htm;
 
     try_files $uri $uri/ @rewrite;
 
     location @rewrite {
         rewrite ^/(.*)$ /app_dev.php/$1;
+        # rewrite ^/(.*)$ /app.php/$1;
     }
 
     location ~ \.php {
         fastcgi_index app_dev.php;
+        # fastcgi_index app.php;
         fastcgi_pass 127.0.0.1:9000;
 
         include fastcgi_params;
