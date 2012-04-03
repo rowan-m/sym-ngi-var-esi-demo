@@ -77,14 +77,16 @@ sudo /etc/init.d/php5-fpm restart
 sudo /etc/init.d/nginx restart
 ```
 
-You should now be able to access the Welcome page by visiting: http://sf2-demo.local:8080/
+If you're running in development mode, you should now be able to access the
+Welcome page by visiting: http://sf2-demo.local:8080/ If you're in production
+mode, you should still be able to get a successful 404 response.
 
 Configuring Varnish
 -------------------
 
 Assuming you're using the provided `etc/default/varnish` file, then Varnish is
-already listening on port 80. You should be able to see the same Welcome page
-on: http://sf-2demo.local
+already listening on port 80. You should be able to see the same Welcome page or
+404 response on: http://sf-2demo.local
 
 The remaining changes have been made as per:
 http://symfony.com/doc/current/cookbook/cache/varnish.html
@@ -114,8 +116,8 @@ Using ESI
 ---------
 
 The use of ESI is enabled through Twig's `render` tag. To demonstrate this, an
-additional action called `included` has been added to the default controller along with a matching
-template.
+additional action called `included` has been added to the default controller
+along with a matching template.
 
 * `var/www/Symfony/src/Ibuildings/EsiDemoBundle/Controller/DefaultController.php`
 * `var/www/Symfony/src/Ibuildings/EsiDemoBundle/Resources/views/Default/index.html.twig`
