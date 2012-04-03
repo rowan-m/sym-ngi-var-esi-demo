@@ -11,14 +11,14 @@ class DefaultController extends Controller
     public function indexAction($name)
     {
         $response = $this->render('IbuildingsEsiDemoBundle:Default:index.html.twig', array('name' => $name));
-        $response->setSharedMaxAge(30);
+        $response->setSharedMaxAge(15);
         return $response;
     }
 
     public function includedAction()
     {
         $response = $this->render('IbuildingsEsiDemoBundle:Default:included.html.twig');
-        $response->setSharedMaxAge(10);
+        $response->setSharedMaxAge(5);
         return $response;
     }
 }
