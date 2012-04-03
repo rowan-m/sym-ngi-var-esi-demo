@@ -123,3 +123,9 @@ template.
 
 By setting different values for `s-maxage` in the `cache-control` header we can
 see that each individual section is cached for a different amount of time.
+
+You can sit and watch the responses using `curl` as a way to amuse yourself:
+
+```
+watch curl -vs http://sf2-demo.local/esi-demo/hello/developers
+```
