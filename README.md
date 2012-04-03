@@ -8,7 +8,7 @@ filesystem, so you can theoretically just extract it as is and go.
 
 The ISO is available here: http://www.ubuntu.com/download/server/download
 
-Add an entry for "`sf2-demo.local`" in your "`/etc/hosts`" of whatever machine
+Add an entry for `sf2-demo.local` in your `/etc/hosts` of whatever machine
 you're using to access the installation.
 
 All commands will assume you are starting from the top-level directory of the
@@ -18,6 +18,7 @@ Installing Packages
 -------------------
 
 Install:
+
 * Varnish: https://www.varnish-cache.org/
 * nginx: http://nginx.org/
 * PHP-FPM: http://php-fpm.org/
@@ -114,7 +115,7 @@ Using ESI
 ---------
 
 The use of ESI is enabled through Twig's `render` tag. To demonstrate this, an
-additional action called "`included`" has been added to the default controller along with a matching
+additional action called `included` has been added to the default controller along with a matching
 template.
 
 * `var/www/Symfony/src/Ibuildings/EsiDemoBundle/Controller/DefaultController.php`
