@@ -107,8 +107,7 @@ The example bundle has been generated using:
 
 ```
 cd var/www/Symfony
-php app/console generate:bundle --namespace=Ibuildings/EsiDemoBundle
---format=yml
+php app/console generate:bundle --namespace=Ibuildings/EsiDemoBundle --format=yml
 ```
 
 Using ESI
